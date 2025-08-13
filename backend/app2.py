@@ -3,7 +3,7 @@ from flask_cors import CORS
 from views import views
 import os
 
-app = Flask(__name__, static_folder="static", template_folder="static/templates")
+app = Flask(__name__, static_folder="static", template_folder=os.path.join("static", "templates"))
 CORS(app)
 
 app.register_blueprint(views, url_prefix="/api")
